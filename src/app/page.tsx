@@ -24,7 +24,7 @@ export default function Home() {
           </h1>
           <p className="lede" style={{ fontSize: 19 }}>
             Full-stack developer from France, now living in Prague. Before that: Nancy, Luxembourg and a year in Seoul.
-            Off screen I run, climb and cook food from the places I&apos;ve lived.
+            Off screen I run, climb, cook food and travel.
           </p>
           <div className="row-wrap">
             <a className="btn btn--solid" href="#work">

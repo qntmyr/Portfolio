@@ -11,5 +11,5 @@ export const races: { status: string; name: string; detail: string; upcoming?: b
 export const dishes: { name: string; country: string; photo: Photo }[] = [
   { name: "Strawberry cake", country: "[Country]", photo: photos.dishStrawberryCake },
   { name: "Empanadas", country: "[Country]", photo: photos.dishEmpanadas },
-  { name: "[Dish name]", country: "[Country]", photo: photos.dishCucumberTart },
+  { name: "Cucumber tart", country: "[Country]", photo: photos.dishCucumberTart },
 ];
