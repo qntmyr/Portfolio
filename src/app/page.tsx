@@ -121,10 +121,10 @@ export default function Home() {
             </span>
           </div>
           <div className="life-item">
-            <Frame label="Photo · a dish you cooked" ratio="4 / 3" />
+            <Frame photo={photos.dishStrawberryCake} ratio="4 / 3" sizes="(max-width: 900px) 50vw, 370px" />
             <span className="life-item__big">[Signature dish]</span>
             <span className="muted" style={{ fontSize: 15 }}>
-              Cooking dishes from the places I&apos;ve travelled.
+              Baking and cooking dishes from around the world.
             </span>
           </div>
         </div>

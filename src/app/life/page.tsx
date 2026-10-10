@@ -90,15 +90,15 @@ export default function LifePage() {
       <section className="section" style={{ gap: 32 }}>
         <div className="section__head">
           <div className="stack-sm" style={{ gap: 12 }}>
-            <span className="eyebrow">Kitchen</span>
+            <span className="eyebrow">Baking and cooking</span>
             <h2 className="h-section">Cooking the places I&apos;ve been</h2>
           </div>
-          <p className="muted">Dishes from around the world, cooked at home.</p>
+          <p className="muted">Baking and cooking dishes from around the world, at home.</p>
         </div>
         <ul className="dishes">
           {dishes.map((d, i) => (
             <li key={i}>
-              <Frame label={`Photo · dish ${i + 1}`} ratio="1" />
+              <Frame photo={d.photo} ratio="1" sizes="(max-width: 900px) 100vw, 370px" />
               <strong className="race__name">{d.name}</strong>
               <span className="eyebrow">{d.country}</span>
             </li>

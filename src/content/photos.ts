@@ -4,6 +4,9 @@ import boulderGym from "@/assets/photos/boulder-gym.jpg";
 import climbMountain from "@/assets/photos/climb-mountain.jpg";
 import climbRock from "@/assets/photos/climb-rock.jpg";
 import czechJersey from "@/assets/photos/czech-jersey.jpg";
+import dishCucumberTart from "@/assets/photos/dish-cucumber-tart.jpg";
+import dishEmpanadas from "@/assets/photos/dish-empanadas.jpg";
+import dishStrawberryCake from "@/assets/photos/dish-strawberry-cake.jpg";
 import elephant from "@/assets/photos/elephant.jpg";
 import juggling from "@/assets/photos/juggling.jpg";
 import kyotoJump from "@/assets/photos/kyoto-jump.jpg";
@@ -31,4 +34,7 @@ export const photos = {
   juggling: { src: juggling, alt: "Quentin juggling on a mountain trail above the clouds", focus: "50% 42%" },
   seoulCertificate: { src: seoulCertificate, alt: "Quentin holding a certificate in a university auditorium", focus: "50% 40%" },
   kyotoJump: { src: kyotoJump, alt: "Quentin jumping under the torii gates of Fushimi Inari", focus: "50% 40%" },
+  dishStrawberryCake: { src: dishStrawberryCake, alt: "A strawberry cake Quentin baked", focus: "50% 60%" },
+  dishEmpanadas: { src: dishEmpanadas, alt: "A tray of homemade empanadas", focus: "50% 50%" },
+  dishCucumberTart: { src: dishCucumberTart, alt: "A savoury tart topped with cucumber slices", focus: "50% 65%" },
 } satisfies Record<string, Photo>;

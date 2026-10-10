@@ -31,17 +31,17 @@ export const experience: Experience[] = [
     place: "Nancy",
   },
   {
+    // TODO(Quentin): the place column is still a placeholder.
+    dates: "Feb → Jul 2025",
+    role: "Parachute packer",
+    company: "Nancy",
+    place: "[Place]",
+  },
+  {
     dates: "Jul → Dec 2023",
     role: "Full-stack developer intern",
     company: "PwC · Data Architecture team",
     place: "Luxembourg",
-  },
-  {
-    // TODO(Quentin): dates, company and place.
-    dates: "[Dates]",
-    role: "Parachute packer",
-    company: "[Drop zone or company]",
-    place: "[Place]",
   },
 ];
 
