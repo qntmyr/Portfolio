@@ -156,7 +156,7 @@ export default function Home() {
           <div className="life-item">
             <Frame photo={photos.dishStrawberryCake} ratio="1" sizes="112px" />
             <div className="life-item__text">
-              <span className="life-item__big">[Signature dish]</span>
+              <span className="life-item__big">Strawberry cake</span>
               <span className="muted" style={{ fontSize: 15 }}>
                 Baking and cooking dishes from around the world.
               </span>
