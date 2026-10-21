@@ -252,11 +252,6 @@ ul {
   width: 100%;
 }
 
-.frame__inner {
-  position: absolute;
-  inset: 0;
-}
-
 .frame--empty {
   display: flex;
   align-items: center;

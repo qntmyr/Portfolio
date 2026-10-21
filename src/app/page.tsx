@@ -1,6 +1,5 @@
 import { ContactFooter } from "@/components/ContactFooter";
 import { Frame } from "@/components/Frame";
-import { Magnetic } from "@/components/Magnetic";
 import { Nav } from "@/components/Nav";
 import { SocialLinks } from "@/components/SocialLinks";
 import { experience, languages, skills } from "@/content/experience";
@@ -29,15 +28,9 @@ export default function Home() {
             food and travel.
           </p>
           <div className="row-wrap">
-            <Magnetic
-              as="a"
-              className="btn btn--solid"
-              href="#work"
-              strength={0.2}
-              max={6}
-            >
+            <a className="btn btn--solid" href="#work">
               See my work
-            </Magnetic>
+            </a>
             <SocialLinks />
           </div>
         </div>
@@ -76,12 +69,9 @@ export default function Home() {
         <div className="route">
           <ol className="route__stops">
             {journey.map((stop) => (
-              <Magnetic
-                as="li"
+              <li
                 key={stop.city}
                 className={stop.current ? "stop stop--current" : "stop"}
-                strength={0.1}
-                max={8}
               >
                 <span className="stop__dot" aria-hidden="true" />
                 <span
@@ -93,7 +83,7 @@ export default function Home() {
                 </span>
                 <strong className="stop__city">{stop.city}</strong>
                 <span className="stop__text">{stop.text}</span>
-              </Magnetic>
+              </li>
             ))}
           </ol>
         </div>
@@ -116,7 +106,7 @@ export default function Home() {
         <h2 className="h-section">Experience</h2>
         <ul className="xp">
           {experience.map((xp) => (
-            <Magnetic as="li" key={xp.role} strength={0.06} max={5}>
+            <li key={xp.role}>
               <span className="xp__date">{xp.dates}</span>
               <span>
                 <strong>{xp.role}</strong>
@@ -128,7 +118,7 @@ export default function Home() {
                 )}
               </span>
               <span className="xp__place">{xp.place}</span>
-            </Magnetic>
+            </li>
           ))}
         </ul>
       </section>
@@ -142,7 +132,7 @@ export default function Home() {
           </p>
         </div>
         <div className="life-grid">
-          <Magnetic className="life-item">
+          <div className="life-item">
             <Frame photo={photos.raceMedal} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">1:27:00</span>
@@ -153,8 +143,8 @@ export default function Home() {
                 Next up · Frankfurt Marathon · Copenhagen Marathon
               </span>
             </div>
-          </Magnetic>
-          <Magnetic className="life-item">
+          </div>
+          <div className="life-item">
             <Frame photo={photos.boulderGym} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">6C</span>
@@ -162,8 +152,8 @@ export default function Home() {
                 Climbing grade. Getting back on the wall after injuries.
               </span>
             </div>
-          </Magnetic>
-          <Magnetic className="life-item">
+          </div>
+          <div className="life-item">
             <Frame photo={photos.dishStrawberryCake} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">Strawberry cake</span>
@@ -171,7 +161,7 @@ export default function Home() {
                 Baking and cooking dishes from around the world.
               </span>
             </div>
-          </Magnetic>
+          </div>
         </div>
         <div className="languages">
           <h3 className="eyebrow" id="languages-label">
@@ -179,15 +169,12 @@ export default function Home() {
           </h3>
           <ul className="chips" aria-labelledby="languages-label">
             {languages.map((l) => (
-              <Magnetic
-                as="li"
+              <li
                 key={l.label}
                 className={l.learning ? "is-learning" : undefined}
-                strength={0.2}
-                max={5}
               >
                 {l.label}
-              </Magnetic>
+              </li>
             ))}
           </ul>
         </div>
@@ -197,10 +184,10 @@ export default function Home() {
         <h2 className="eyebrow">Toolbox</h2>
         <div className="skills">
           {skills.map((s) => (
-            <Magnetic key={s.group} strength={0.08} max={6}>
+            <div key={s.group}>
               <strong>{s.group}</strong>
               <span className="muted">{s.items}</span>
-            </Magnetic>
+            </div>
           ))}
         </div>
       </section>
@@ -212,12 +199,7 @@ export default function Home() {
 
 function FeaturedCard({ project }: { project: Project }) {
   return (
-    <Magnetic
-      as="article"
-      className="card card--featured"
-      strength={0.06}
-      max={8}
-    >
+    <article className="card card--featured">
       <Frame
         photo={project.screenshot}
         label={project.image}
@@ -244,7 +226,7 @@ function FeaturedCard({ project }: { project: Project }) {
         )}
         <ProjectLinks project={project} />
       </div>
-    </Magnetic>
+    </article>
   );
 }
 
@@ -256,8 +238,7 @@ function ProjectCard({
   withImage?: boolean;
 }) {
   return (
-    <Magnetic
-      as="article"
+    <article
       className="card"
       style={withImage ? undefined : { flex: 1, gap: 10 }}
     >
@@ -278,7 +259,7 @@ function ProjectCard({
       </h3>
       <p className="muted">{project.summary}</p>
       <ProjectLinks project={project} />
-    </Magnetic>
+    </article>
   );
 }
 
