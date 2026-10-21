@@ -1,5 +1,6 @@
 import { ContactFooter } from "@/components/ContactFooter";
 import { Frame } from "@/components/Frame";
+import { Magnetic } from "@/components/Magnetic";
 import { Nav } from "@/components/Nav";
 import { SocialLinks } from "@/components/SocialLinks";
 import { experience, languages, skills } from "@/content/experience";
@@ -132,7 +133,7 @@ export default function Home() {
           </p>
         </div>
         <div className="life-grid">
-          <div className="life-item">
+          <Magnetic className="life-item">
             <Frame photo={photos.raceMedal} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">1:27:00</span>
@@ -143,8 +144,8 @@ export default function Home() {
                 Next up · Frankfurt Marathon · Copenhagen Marathon
               </span>
             </div>
-          </div>
-          <div className="life-item">
+          </Magnetic>
+          <Magnetic className="life-item">
             <Frame photo={photos.boulderGym} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">6C</span>
@@ -152,8 +153,8 @@ export default function Home() {
                 Climbing grade. Getting back on the wall after injuries.
               </span>
             </div>
-          </div>
-          <div className="life-item">
+          </Magnetic>
+          <Magnetic className="life-item">
             <Frame photo={photos.dishStrawberryCake} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">Strawberry cake</span>
@@ -161,7 +162,7 @@ export default function Home() {
                 Baking and cooking dishes from around the world.
               </span>
             </div>
-          </div>
+          </Magnetic>
         </div>
         <div className="languages">
           <h3 className="eyebrow" id="languages-label">
@@ -184,10 +185,10 @@ export default function Home() {
         <h2 className="eyebrow">Toolbox</h2>
         <div className="skills">
           {skills.map((s) => (
-            <div key={s.group}>
+            <Magnetic key={s.group} strength={0.08} max={6}>
               <strong>{s.group}</strong>
               <span className="muted">{s.items}</span>
-            </div>
+            </Magnetic>
           ))}
         </div>
       </section>
@@ -199,7 +200,12 @@ export default function Home() {
 
 function FeaturedCard({ project }: { project: Project }) {
   return (
-    <article className="card card--featured">
+    <Magnetic
+      as="article"
+      className="card card--featured"
+      strength={0.06}
+      max={8}
+    >
       <Frame
         photo={project.screenshot}
         label={project.image}
@@ -226,7 +232,7 @@ function FeaturedCard({ project }: { project: Project }) {
         )}
         <ProjectLinks project={project} />
       </div>
-    </article>
+    </Magnetic>
   );
 }
 
@@ -238,7 +244,8 @@ function ProjectCard({
   withImage?: boolean;
 }) {
   return (
-    <article
+    <Magnetic
+      as="article"
       className="card"
       style={withImage ? undefined : { flex: 1, gap: 10 }}
     >
@@ -259,7 +266,7 @@ function ProjectCard({
       </h3>
       <p className="muted">{project.summary}</p>
       <ProjectLinks project={project} />
-    </article>
+    </Magnetic>
   );
 }
 
