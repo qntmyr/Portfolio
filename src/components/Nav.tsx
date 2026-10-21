@@ -6,7 +6,7 @@ export function Nav({ active }: { active?: Section }) {
   const links: { id: Section; label: string; href: string }[] = [
     { id: "work", label: "Work", href: "/#work" },
     { id: "journey", label: "Journey", href: "/#journey" },
-    { id: "life", label: "Life", href: "/life" },
+    { id: "life", label: "Life", href: "/#life" },
     { id: "contact", label: "Contact", href: "#contact" },
   ];
   return (

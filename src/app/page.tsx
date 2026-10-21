@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ContactFooter } from "@/components/ContactFooter";
 import { Frame } from "@/components/Frame";
 import { Nav } from "@/components/Nav";
@@ -85,8 +84,12 @@ export default function Home() {
               <span className="xp__date">{xp.dates}</span>
               <span>
                 <strong>{xp.role}</strong>
-                <br />
-                <span className="muted">{xp.company}</span>
+                {xp.company && (
+                  <>
+                    <br />
+                    <span className="muted">{xp.company}</span>
+                  </>
+                )}
               </span>
               <span className="xp__place">{xp.place}</span>
             </li>
@@ -97,12 +100,9 @@ export default function Home() {
       <section id="life" className="section">
         <div className="section__head">
           <h2 className="h-section">When I&apos;m not coding</h2>
-          <div className="stack-sm" style={{ gap: 10 }}>
-            <p className="muted">The same habits show up at work: steady pacing, problem solving, and a team to play for.</p>
-            <Link href="/life" className="link-strong">
-              More photos →
-            </Link>
-          </div>
+          <p className="muted" style={{ maxWidth: "26em" }}>
+            The same habits show up at work: steady pacing, problem solving, and a team to play for.
+          </p>
         </div>
         <div className="life-grid">
           <div className="life-item">
@@ -202,14 +202,10 @@ function ProjectCard({ project, withImage = false }: { project: Project; withIma
 }
 
 function ProjectLinks({ project }: { project: Project }) {
-  if (!project.caseStudy && !project.link) return null;
+  // Single page for now: no case-study pages, only the external link when there is one.
+  if (!project.link) return null;
   return (
     <div className="row-wrap" style={{ gap: 24 }}>
-      {project.caseStudy && (
-        <Link href={`/work/${project.slug}`} className="link-strong">
-          Read the full story →
-        </Link>
-      )}
       {project.link && (
         <a href={project.link.href} className="link-strong muted" target="_blank" rel="noopener noreferrer">
           {project.link.label} ↗

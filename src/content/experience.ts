@@ -1,7 +1,7 @@
 export type Experience = {
   dates: string;
   role: string;
-  company: string;
+  company?: string;
   place: string;
 };
 
@@ -31,11 +31,9 @@ export const experience: Experience[] = [
     place: "Nancy",
   },
   {
-    // TODO(Quentin): the place column is still a placeholder.
     dates: "Feb → Jul 2025",
     role: "Parachute packer",
-    company: "Nancy",
-    place: "[Place]",
+    place: "Nancy",
   },
   {
     dates: "Jul → Dec 2023",

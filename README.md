@@ -14,9 +14,9 @@ npm run build   # production build
 
 ## Where things live
 
-- `src/content/` holds every text on the site: journey, projects and case studies, experience, life page. Edit these files to change copy; texts in `[brackets]` are placeholders still to write.
+- `src/content/` holds every text on the site: journey, projects, experience, life. Edit these files to change copy; texts in `[brackets]` are placeholders still to write. The case-study texts (`projects.ts`) and `life.ts` are kept for the detail pages planned later.
 - `src/assets/photos/` holds the photos. Each one is declared once in `src/content/photos.ts` with its alt text and crop (`focus`).
-- `src/app/` holds the pages: home (`/`), case studies (`/work/[slug]`) and `/life`.
+- `src/app/` holds the pages. For now the site is a single page (`/`); the Work and Life detail pages will come later.
 - `public/Quentin_Mayer_CV.pdf` is the CV behind the "Download CV" button.
 
 ## Branches
