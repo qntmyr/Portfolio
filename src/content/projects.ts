@@ -1,5 +1,6 @@
 // Texts in [brackets] are placeholders waiting for Quentin's own words.
 
+import iziclubScreens from "@/assets/screens/iziclub-site-app.jpg";
 import lsdtScreens from "@/assets/screens/lsdt-dashboard-app.jpg";
 import type { Photo } from "./photos";
 
@@ -139,6 +140,11 @@ export const projects: Project[] = [
     summary:
       "An admin dashboard for local sports clubs and a public app to find clubs and events. I lead a team of four, plan the sprints and run the beta with real users.",
     image: "Screenshot · iziClub app",
+    screenshot: {
+      src: iziclubScreens,
+      alt: "The iziClub website, with a club page from the app in front of it",
+      focus: "50% 50%",
+    },
     link: { label: "iziclub.fr", href: "https://iziclub.fr" },
     caseStudy: {
       intro:
