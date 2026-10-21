@@ -175,6 +175,9 @@ ul {
 }
 
 .nav__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--serif);
   font-size: 26px;
   text-decoration: none;
