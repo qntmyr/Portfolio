@@ -1,5 +1,8 @@
 // Texts in [brackets] are placeholders waiting for Quentin's own words.
 
+import lsdtScreens from "@/assets/screens/lsdt-dashboard-app.jpg";
+import type { Photo } from "./photos";
+
 export type CaseStudy = {
   intro: string;
   facts: { label: string; value: string; href?: string }[];
@@ -20,7 +23,10 @@ export type Project = {
   summary: string;
   bullets?: string[];
   tags?: string[];
+  /** Label of the placeholder shown until the screenshot exists. */
   image?: string;
+  /** Real screenshot, names blurred. */
+  screenshot?: Photo;
   link?: { label: string; href: string };
   featured?: boolean;
   caseStudy?: CaseStudy;
@@ -41,6 +47,11 @@ export const projects: Project[] = [
     // TODO(Quentin): confirm the stack.
     tags: ["React", "React Native", "Express", "PostgreSQL", "Vercel"],
     image: "Screenshots · LSDT dashboard + booking app",
+    screenshot: {
+      src: lsdtScreens,
+      alt: "The La Salle du Temps planning dashboard, with the member app in front of it",
+      focus: "0% 50%",
+    },
     featured: true,
     caseStudy: {
       intro:

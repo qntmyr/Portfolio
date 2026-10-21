@@ -162,7 +162,7 @@ export default function Home() {
 function FeaturedCard({ project }: { project: Project }) {
   return (
     <article className="card card--featured">
-      <Frame label={project.image} ratio="16 / 10" />
+      <Frame photo={project.screenshot} label={project.image} ratio="16 / 10" sizes="(max-width: 900px) 100vw, 640px" />
       <div className="stack-sm" style={{ justifyContent: "center", gap: 16 }}>
         <span className="eyebrow eyebrow--accent">{project.eyebrow}</span>
         <h3 className="card__title">{project.name}</h3>
@@ -190,7 +190,7 @@ function FeaturedCard({ project }: { project: Project }) {
 function ProjectCard({ project, withImage = false }: { project: Project; withImage?: boolean }) {
   return (
     <article className="card" style={withImage ? undefined : { flex: 1, gap: 10 }}>
-      {withImage && <Frame label={project.image} ratio="16 / 9" />}
+      {withImage && <Frame photo={project.screenshot} label={project.image} ratio="16 / 9" sizes="(max-width: 900px) 100vw, 560px" />}
       <span className="eyebrow eyebrow--accent">{project.eyebrow}</span>
       <h3 className="card__title" style={withImage ? undefined : { fontSize: 28 }}>
         {project.name}
