@@ -462,10 +462,18 @@ ul {
   gap: 20px;
 }
 
+/* Small square photo beside the text: the photos are low-res, so they stay small. */
 .life-item {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.life-item__text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .life-item__big {
