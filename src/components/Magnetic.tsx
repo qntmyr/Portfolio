@@ -8,15 +8,31 @@ import {
 } from "motion/react";
 import type { CSSProperties, PointerEvent, ReactNode } from "react";
 
+type Tag = "div" | "article" | "li" | "a" | "span";
+
 type MagneticProps = {
-  as?: "div" | "article";
+  as?: Tag;
   className?: string;
   style?: CSSProperties;
   /** Fraction of the pointer's offset from the centre the block follows. */
   strength?: number;
   /** Largest shift in px, whatever the block's size. */
   max?: number;
+  /** Resting scale, for photos that must keep their frame covered while they move. */
+  scale?: number;
+  href?: string;
+  target?: string;
+  rel?: string;
+  download?: boolean;
   children: ReactNode;
+};
+
+const tags = {
+  div: motion.div,
+  article: motion.article,
+  li: motion.li,
+  a: motion.a,
+  span: motion.span,
 };
 
 /**
@@ -25,11 +41,12 @@ type MagneticProps = {
  */
 export function Magnetic({
   as = "div",
-  className,
   style,
   strength = 0.12,
   max = 10,
+  scale,
   children,
+  ...rest
 }: MagneticProps) {
   const reduced = useReducedMotion();
   const x = useMotionValue(0);
@@ -50,15 +67,15 @@ export function Magnetic({
     y.set(0);
   };
 
-  const Tag = as === "article" ? motion.article : motion.div;
+  const Component = tags[as];
   return (
-    <Tag
-      className={className}
-      style={{ ...style, x: sx, y: sy }}
+    <Component
+      {...rest}
+      style={{ ...style, x: sx, y: sy, scale }}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
       {children}
-    </Tag>
+    </Component>
   );
 }

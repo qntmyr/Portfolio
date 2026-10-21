@@ -29,9 +29,15 @@ export default function Home() {
             food and travel.
           </p>
           <div className="row-wrap">
-            <a className="btn btn--solid" href="#work">
+            <Magnetic
+              as="a"
+              className="btn btn--solid"
+              href="#work"
+              strength={0.2}
+              max={6}
+            >
               See my work
-            </a>
+            </Magnetic>
             <SocialLinks />
           </div>
         </div>
@@ -70,9 +76,12 @@ export default function Home() {
         <div className="route">
           <ol className="route__stops">
             {journey.map((stop) => (
-              <li
+              <Magnetic
+                as="li"
                 key={stop.city}
                 className={stop.current ? "stop stop--current" : "stop"}
+                strength={0.1}
+                max={8}
               >
                 <span className="stop__dot" aria-hidden="true" />
                 <span
@@ -84,7 +93,7 @@ export default function Home() {
                 </span>
                 <strong className="stop__city">{stop.city}</strong>
                 <span className="stop__text">{stop.text}</span>
-              </li>
+              </Magnetic>
             ))}
           </ol>
         </div>
@@ -107,7 +116,7 @@ export default function Home() {
         <h2 className="h-section">Experience</h2>
         <ul className="xp">
           {experience.map((xp) => (
-            <li key={xp.role}>
+            <Magnetic as="li" key={xp.role} strength={0.06} max={5}>
               <span className="xp__date">{xp.dates}</span>
               <span>
                 <strong>{xp.role}</strong>
@@ -119,7 +128,7 @@ export default function Home() {
                 )}
               </span>
               <span className="xp__place">{xp.place}</span>
-            </li>
+            </Magnetic>
           ))}
         </ul>
       </section>
@@ -170,12 +179,15 @@ export default function Home() {
           </h3>
           <ul className="chips" aria-labelledby="languages-label">
             {languages.map((l) => (
-              <li
+              <Magnetic
+                as="li"
                 key={l.label}
                 className={l.learning ? "is-learning" : undefined}
+                strength={0.2}
+                max={5}
               >
                 {l.label}
-              </li>
+              </Magnetic>
             ))}
           </ul>
         </div>
