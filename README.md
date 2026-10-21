@@ -22,4 +22,4 @@ npm run build   # production build
 
 ## Branches
 
-Work happens on `pre-prod`. `main` is production and is only updated by merging `pre-prod`.
+Work happens on `pre-prod`. `prod` is the production branch deployed by Vercel and is only updated by merging `pre-prod`.
