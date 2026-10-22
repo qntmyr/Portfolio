@@ -60,8 +60,9 @@ export default function Home() {
         <Reveal className="section__head">
           <h2 className="h-section">Four cities, one stack.</h2>
           <p className="muted">
-            Every move added a layer: low-level C at Epitech, data architecture
-            at PwC, mobile and databases in Seoul, production work from Prague.
+            Every stop shaped a different part of my craft: systems programming
+            at Epitech, data architecture at PwC, mobile development in Seoul,
+            and production engineering in Prague.
           </p>
         </Reveal>
         <div className="route">

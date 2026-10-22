@@ -11,7 +11,12 @@ export type CaseStudy = {
   productsTitle: string;
   products: { title: string; text: string; image: string }[];
   timelineTitle: string;
-  timeline: { dates: string; title: string; bullets: string[]; current?: boolean }[];
+  timeline: {
+    dates: string;
+    title: string;
+    bullets: string[];
+    current?: boolean;
+  }[];
   decisionsTitle: string;
   decisionsIntro: string;
   decisions: { title: string; text: string }[];
@@ -43,7 +48,7 @@ export const projects: Project[] = [
     bullets: [
       "Redesigned and rebuilt the back-office dashboard, from Figma to database rework.",
       "Built the mobile booking app, front end and back end.",
-      "Now working remotely: deployments, environments and the production database.",
+      "Maintaining the production environment, managing deployments and keeping the database running reliably.",
     ],
     // TODO(Quentin): confirm the stack.
     tags: ["React", "React Native", "Express", "PostgreSQL", "Vercel"],
@@ -60,10 +65,14 @@ export const projects: Project[] = [
       facts: [
         { label: "Role", value: "Full-stack, DevOps and database" },
         { label: "Company", value: "Family Innovation" },
-        { label: "Stack", value: "React, React Native, Express, PostgreSQL, Vercel" },
+        {
+          label: "Stack",
+          value: "React, React Native, Express, PostgreSQL, Vercel",
+        },
         { label: "Period", value: "Apr 2025 → Feb 2027" },
       ],
-      heroImage: "Hero screenshot · dashboard on a laptop, booking app on a phone",
+      heroImage:
+        "Hero screenshot · dashboard on a laptop, booking app on a phone",
       productsTitle: "Four products, one studio",
       products: [
         {
@@ -101,7 +110,10 @@ export const projects: Project[] = [
         {
           dates: "Mar → Jun 2026 · from Seoul",
           title: "Freelance back-end and mobile",
-          bullets: ["Built the mobile booking app, front end and back end.", "My first freelance job."],
+          bullets: [
+            "Built the mobile booking app, front end and back end.",
+            "My first freelance job.",
+          ],
         },
         {
           dates: "Sep 2026 → Feb 2027 · remote",
@@ -174,12 +186,18 @@ export const projects: Project[] = [
         {
           dates: "Product",
           title: "Positioning and marketing",
-          bullets: ["Product positioning and communication.", "Social media and community growth."],
+          bullets: [
+            "Product positioning and communication.",
+            "Social media and community growth.",
+          ],
         },
         {
           dates: "Users",
           title: "Beta and usability testing",
-          bullets: ["Recruited beta testers.", "Ran usability tests with real users."],
+          bullets: [
+            "Recruited beta testers.",
+            "Ran usability tests with real users.",
+          ],
         },
         {
           dates: "Team",
@@ -193,11 +211,21 @@ export const projects: Project[] = [
         },
       ],
       decisionsTitle: "What I learned",
-      decisionsIntro: "Leading a product with real users changes how you write code.",
+      decisionsIntro:
+        "Leading a product with real users changes how you write code.",
       decisions: [
-        { title: "[Lesson 1 · from user testing]", text: "[What users did that you didn't expect, and what you changed.]" },
-        { title: "[Lesson 2 · from leading the team]", text: "[How you organise four people across sprints.]" },
-        { title: "[Lesson 3 · a product choice]", text: "[A feature you cut or added, and why.]" },
+        {
+          title: "[Lesson 1 · from user testing]",
+          text: "[What users did that you didn't expect, and what you changed.]",
+        },
+        {
+          title: "[Lesson 2 · from leading the team]",
+          text: "[How you organise four people across sprints.]",
+        },
+        {
+          title: "[Lesson 3 · a product choice]",
+          text: "[A feature you cut or added, and why.]",
+        },
       ],
     },
   },
@@ -212,7 +240,8 @@ export const projects: Project[] = [
     slug: "senator",
     name: "A senator's website",
     eyebrow: "Front-end · 2025",
-    summary: "The UI of a French senator's official site, built from scratch in PHP and WordPress with a designer.",
+    summary:
+      "The UI of a French senator's official site, built from scratch in PHP and WordPress with a designer.",
   },
 ];
 

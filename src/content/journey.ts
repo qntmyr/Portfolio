@@ -29,7 +29,7 @@ export const journey: Stop[] = [
     city: "Prague",
     coords: "50.08°N 14.44°E",
     year: "Now",
-    text: "Working remotely on the whole La Salle du Temps stack, and looking to build my future in IT here in Prague.",
+    text: "Now based in Prague, I'm working remotely across the La Salle du Temps stack and looking for my next opportunity in software engineering.",
     current: true,
   },
 ];
