@@ -9,8 +9,8 @@ export const site = {
 
 export const contact = {
   email: "quentin.mayer@epitech.eu",
-  phone: "+33 7 83 85 30 41",
-  phoneHref: "tel:+33783853041",
+  phone: "+420 725 762 674",
+  phoneHref: "tel:+420725762674",
   cv: "/Quentin_Mayer_CV.pdf",
 };
 

@@ -29,9 +29,6 @@ export default function Home() {
             food and travel.
           </p>
           <div className="row-wrap">
-            <a className="btn btn--solid" href="#work">
-              See my work
-            </a>
             <SocialLinks />
           </div>
         </Reveal>
@@ -142,7 +139,7 @@ export default function Home() {
           <Reveal className="life-item">
             <Frame photo={photos.raceMedal} ratio="1" sizes="112px" />
             <div className="life-item__text">
-              <span className="life-item__big">1:27:00</span>
+              <span className="life-item__big">1:27:46</span>
               <span className="muted" style={{ fontSize: 15 }}>
                 Half-marathon personal best.
               </span>
