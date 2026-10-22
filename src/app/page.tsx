@@ -1,6 +1,7 @@
 import { ContactFooter } from "@/components/ContactFooter";
 import { Frame } from "@/components/Frame";
 import { Nav } from "@/components/Nav";
+import { Reveal } from "@/components/Reveal";
 import { SocialLinks } from "@/components/SocialLinks";
 import { experience, languages, skills } from "@/content/experience";
 import { journey } from "@/content/journey";
@@ -16,7 +17,7 @@ export default function Home() {
       <Nav />
 
       <section id="top" className="hero" aria-label="Introduction">
-        <div className="stack" style={{ gap: 28 }}>
+        <Reveal className="stack" style={{ gap: 28 }}>
           <p className="eyebrow eyebrow--accent">50.08°N 14.44°E · Prague</p>
           <h1 className="hero__title">
             Hi, I&apos;m Quentin. I build web and mobile products{" "}
@@ -33,8 +34,8 @@ export default function Home() {
             </a>
             <SocialLinks />
           </div>
-        </div>
-        <div className="collage">
+        </Reveal>
+        <Reveal className="collage" delay={0.15}>
           <Frame
             photo={photos.sunset}
             ratio="4 / 5"
@@ -55,23 +56,25 @@ export default function Home() {
             className="collage__c"
             sizes="(max-width: 900px) 48vw, 260px"
           />
-        </div>
+        </Reveal>
       </section>
 
       <section id="journey" className="section">
-        <div className="section__head">
+        <Reveal className="section__head">
           <h2 className="h-section">Four cities, one stack.</h2>
           <p className="muted">
             Every move added a layer: low-level C at Epitech, data architecture
             at PwC, mobile and databases in Seoul, production work from Prague.
           </p>
-        </div>
+        </Reveal>
         <div className="route">
           <ol className="route__stops">
-            {journey.map((stop) => (
-              <li
+            {journey.map((stop, i) => (
+              <Reveal
+                as="li"
                 key={stop.city}
                 className={stop.current ? "stop stop--current" : "stop"}
+                delay={i * 0.12}
               >
                 <span className="stop__dot" aria-hidden="true" />
                 <span
@@ -83,30 +86,34 @@ export default function Home() {
                 </span>
                 <strong className="stop__city">{stop.city}</strong>
                 <span className="stop__text">{stop.text}</span>
-              </li>
+              </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
       <section id="work" className="section">
-        <h2 className="h-section">Things I&apos;ve built</h2>
+        <Reveal>
+          <h2 className="h-section">Things I&apos;ve built</h2>
+        </Reveal>
         <FeaturedCard project={featured} />
         <div className="work-grid">
           <ProjectCard project={second} withImage />
           <div className="stack">
-            {small.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
+            {small.map((p, i) => (
+              <ProjectCard key={p.slug} project={p} delay={0.1 + i * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
       <section id="experience" className="section" style={{ gap: 32 }}>
-        <h2 className="h-section">Experience</h2>
+        <Reveal>
+          <h2 className="h-section">Experience</h2>
+        </Reveal>
         <ul className="xp">
-          {experience.map((xp) => (
-            <li key={xp.role}>
+          {experience.map((xp, i) => (
+            <Reveal as="li" key={xp.role} delay={i * 0.06}>
               <span className="xp__date">{xp.dates}</span>
               <span>
                 <strong>{xp.role}</strong>
@@ -118,21 +125,21 @@ export default function Home() {
                 )}
               </span>
               <span className="xp__place">{xp.place}</span>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </section>
 
       <section id="life" className="section">
-        <div className="section__head">
+        <Reveal className="section__head">
           <h2 className="h-section">When I&apos;m not coding</h2>
           <p className="muted" style={{ maxWidth: "26em" }}>
             The same habits show up at work: steady pacing, problem solving, and
             a team to play for.
           </p>
-        </div>
+        </Reveal>
         <div className="life-grid">
-          <div className="life-item">
+          <Reveal className="life-item">
             <Frame photo={photos.raceMedal} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">1:27:00</span>
@@ -143,8 +150,8 @@ export default function Home() {
                 Next up · Frankfurt Marathon · Copenhagen Marathon
               </span>
             </div>
-          </div>
-          <div className="life-item">
+          </Reveal>
+          <Reveal className="life-item" delay={0.1}>
             <Frame photo={photos.boulderGym} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">6C</span>
@@ -152,8 +159,8 @@ export default function Home() {
                 Climbing grade. Getting back on the wall after injuries.
               </span>
             </div>
-          </div>
-          <div className="life-item">
+          </Reveal>
+          <Reveal className="life-item" delay={0.2}>
             <Frame photo={photos.dishStrawberryCake} ratio="1" sizes="112px" />
             <div className="life-item__text">
               <span className="life-item__big">Strawberry cake</span>
@@ -161,9 +168,9 @@ export default function Home() {
                 Baking and cooking dishes from around the world.
               </span>
             </div>
-          </div>
+          </Reveal>
         </div>
-        <div className="languages">
+        <Reveal className="languages" delay={0.1}>
           <h3 className="eyebrow" id="languages-label">
             I speak
           </h3>
@@ -177,17 +184,19 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section toolbox">
-        <h2 className="eyebrow">Toolbox</h2>
+        <Reveal>
+          <h2 className="eyebrow">Toolbox</h2>
+        </Reveal>
         <div className="skills">
-          {skills.map((s) => (
-            <div key={s.group}>
+          {skills.map((s, i) => (
+            <Reveal key={s.group} delay={i * 0.06}>
               <strong>{s.group}</strong>
               <span className="muted">{s.items}</span>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -199,7 +208,7 @@ export default function Home() {
 
 function FeaturedCard({ project }: { project: Project }) {
   return (
-    <article className="card card--featured">
+    <Reveal as="article" className="card card--featured">
       <Frame
         photo={project.screenshot}
         label={project.image}
@@ -226,21 +235,25 @@ function FeaturedCard({ project }: { project: Project }) {
         )}
         <ProjectLinks project={project} />
       </div>
-    </article>
+    </Reveal>
   );
 }
 
 function ProjectCard({
   project,
   withImage = false,
+  delay = 0,
 }: {
   project: Project;
   withImage?: boolean;
+  delay?: number;
 }) {
   return (
-    <article
+    <Reveal
+      as="article"
       className="card"
       style={withImage ? undefined : { flex: 1, gap: 10 }}
+      delay={delay}
     >
       {withImage && (
         <Frame
@@ -259,7 +272,7 @@ function ProjectCard({
       </h3>
       <p className="muted">{project.summary}</p>
       <ProjectLinks project={project} />
-    </article>
+    </Reveal>
   );
 }
 
