@@ -7,6 +7,7 @@ import { experience, languages, skills } from "@/content/experience";
 import { journey } from "@/content/journey";
 import { photos } from "@/content/photos";
 import { projects, type Project } from "@/content/projects";
+import { contact } from "@/content/site";
 
 export default function Home() {
   const [featured, ...others] = projects;
@@ -29,6 +30,9 @@ export default function Home() {
             food and travel.
           </p>
           <div className="row-wrap">
+            <a className="btn btn--solid" href={contact.cv} download>
+              Download CV
+            </a>
             <SocialLinks />
           </div>
         </Reveal>
